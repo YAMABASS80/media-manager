@@ -1,11 +1,11 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
-      :mini-variant="miniVariant"
       :clipped="clipped"
       v-model="drawer"
       fixed
       app
+      dark
     >
       <v-list>
         <v-list-tile
@@ -28,15 +28,16 @@
       :clipped-left="clipped"
       fixed
       app
+      dark
     >
       <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />
-      </v-btn>
-      <v-btn
+      </v-btn> -->
+      <!-- <v-btn
         icon
         @click.stop="clipped = !clipped"
       >
@@ -47,40 +48,20 @@
         @click.stop="fixed = !fixed"
       >
         <v-icon>remove</v-icon>
-      </v-btn>
+      </v-btn> -->
       <v-toolbar-title v-text="title"/>
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      :right="right"
-      v-model="rightDrawer"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :fixed="fixed"
       app
+      dark
     >
-      <span>&copy; 2017</span>
+      <span>&copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -90,16 +71,18 @@
     data() {
       return {
         clipped: false,
-        drawer: true,
+        drawer: false,
         fixed: false,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-          { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
+          { icon: 'home', title: 'ホーム', to: '/' },
+          { icon: 'video_library', title: 'メディア管理', to: '/media_management' },
+          { icon: 'logout', title: 'ログアウト', to: '/logout' },
+
         ],
-        miniVariant: false,
+        // miniVariant: true,
         right: true,
         rightDrawer: false,
-        title: 'Vuetify.js'
+        title: 'Media Manager'
       }
     }
   }
