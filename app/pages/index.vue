@@ -1,37 +1,14 @@
 <template>
   <v-container grid-list-md fluid>
-    <v-layout row wrap>
+    <v-layout column wrap>
+      <ContentCard
+        v-for="(item, i) in items" :key="i"
+        :card_title="item.card_title"
+        :card_text="item.card_text"
+      >
 
-        <v-flex xs12>
-          <v-card color="gray lighten-4">
-            <v-card-title primary-title>
-              <div>
-                <div class="headline">タイトルタイトルタイトルああああああああ</div>
-                <span>昔々あるところにおじいさんとおばあさんがおりました。おばあさんは山へ芝刈りに</span>
-              </div>
-            </v-card-title>
-              <v-card-actions>
-                <v-btn flat>再生</v-btn>
-                <v-btn flat>編集</v-btn>
-              </v-card-actions>
-          </v-card>
-        </v-flex>
-
-        <v-flex xs12>
-          <v-card color="gray lighten-4">
-            <v-card-title primary-title>
-              <div>
-                <div class="headline">タイトルタイトルタイトルああああああああ</div>
-                <span>昔々あるところにおじいさんとおばあさんがおりました。おばあさんは山へ芝刈りに</span>
-              </div>
-            </v-card-title>
-              <v-card-actions>
-                <v-btn flat>再生</v-btn>
-                <v-btn flat>編集</v-btn>
-              </v-card-actions>
-          </v-card>
-        </v-flex>
-
+      </ContentCard>
+      <!-- <ContentCard></ContentCard> -->
 
 
     </v-layout>
@@ -39,6 +16,24 @@
 </template>
 
 <script>
+import ContentCard from '../components/ContentCard'
 export default {
+  components: {
+    ContentCard
+  },
+  data(){
+    return {
+      items : [
+        {
+          card_title: "ほげほげお",
+          card_text : "ああああああああああああああああ"
+        },
+        {
+          card_title: "あｄふぁうぇらｐｄさｆｄふぁｄさ",
+          card_text : "いいいいいいいいいいいいいいいいいい"
+        }
+      ]
+    }
+  }
 }
 </script>
