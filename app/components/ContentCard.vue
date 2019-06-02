@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-flex xs12 sm6 offset-sm3>
+    <v-flex xs12 md>
       <v-card color="gray lighten-4">
         <v-img
-          src=https://picsum.photos/400/300/?random
+          src=https://picsum.photos/200/150/?random height="200px"
 
         ></v-img>
         <v-card-title primary-title>
@@ -13,8 +13,12 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat>再生</v-btn>
-          <v-btn flat>編集</v-btn>
+          <v-btn flat>
+            <v-icon>play_arrow</v-icon>
+          </v-btn>
+          <v-btn flat>
+            <v-icon>edit</v-icon>
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
@@ -29,6 +33,9 @@ export default {
       type: String
     },
     card_text: {
+      type: String
+    },
+    card_image: {
       type: String
     }
   }
