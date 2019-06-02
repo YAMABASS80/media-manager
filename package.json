@@ -11,6 +11,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "aws-amplify": "^1.1.28",
+    "aws-amplify-vue": "^0.2.11",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "vuetify": "^1.2.4"
