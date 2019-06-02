@@ -1,7 +1,11 @@
 <template>
   <div>
-    <v-flex xs12>
+    <v-flex xs12 sm6 offset-sm3>
       <v-card color="gray lighten-4">
+        <v-img
+          src=https://picsum.photos/400/300/?random
+
+        ></v-img>
         <v-card-title primary-title>
           <div>
             <div class="headline">{{card_title}}</div>
@@ -20,9 +24,13 @@
 <script>
 export default {
   name : "ContentCard",
-  props : [
-    "card_title",
-    "card_text"
-  ]
+  props : {
+    card_title: {
+      type: String
+    },
+    card_text: {
+      type: String
+    }
+  }
 };
 </script>
