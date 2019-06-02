@@ -36,7 +36,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    { src : '@/plugins/vuetify' },
+    { src : '@/aws-exports.js' },
+    { src : '@/plugins/aws-amplify.js', ssr: false}
   ],
 
   /*
