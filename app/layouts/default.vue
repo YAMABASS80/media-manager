@@ -22,7 +22,16 @@
             <v-list-tile-title v-text="item.title" />
           </v-list-tile-content>
         </v-list-tile>
+        <v-list-tile router exact @click="signOut">
+          <v-list-tile-action>
+            <v-icon>logout</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>ログアウト</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
       </v-list>
+
     </v-navigation-drawer>
     <v-toolbar
       :clipped-left="clipped"
@@ -49,23 +58,31 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
-        items: [
-          { icon: 'home', title: 'ホーム', to: '/' },
-          { icon: 'video_library', title: 'メディア管理', to: '/media_management' },
-          { icon: 'logout', title: 'ログアウト', to: '/logout' },
+import { Auth } from 'aws-amplify'
 
-        ],
-        // miniVariant: true,
-        right: true,
-        rightDrawer: false,
-        title: 'Media Manager'
-      }
+export default {
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [
+        { icon: 'home', title: 'ホーム', to: '/' },
+        { icon: 'video_library', title: 'メディア管理', to: '/media_management' }
+      ],
+      // miniVariant: true,
+      right: true,
+      rightDrawer: false,
+      title: 'Media Manager'
+    }
+  },
+  methods: {
+    signOut(){
+      Auth.signOut()
+        .then(data => console.log(data))
+        .then(data => this.$router.push('/signin'))
+        .catch(err => console.log(err));
     }
   }
+}
 </script>
