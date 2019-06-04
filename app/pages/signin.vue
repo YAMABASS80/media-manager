@@ -13,6 +13,14 @@
                   <v-text-field prepend-icon="person" name="login" label="Login" type="text" v-model="username"></v-text-field>
                   <v-text-field id="password" prepend-icon="lock" name="password" label="Password" type="password" v-model="password"></v-text-field>
                 </v-form>
+                <v-alert
+                  v-if="errors"
+                  :value="true"
+                  type="warning"
+                >
+                    {{errors}}
+                </v-alert>
+
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
@@ -42,7 +50,7 @@ export default {
     signIn () {
       Auth.signIn(this.username, this.password)
         .then(data => this.$router.push('/'))
-        .catch(err => this.errors = err)
+        .catch(err => this.errors = err.message)
     },
   }
 }
