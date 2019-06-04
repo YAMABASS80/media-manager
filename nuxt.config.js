@@ -41,6 +41,13 @@ module.exports = {
     { src : '@/plugins/aws-amplify.js', ssr: false}
   ],
 
+  /* Middleware*/
+  router : {
+    middleware: [
+      'auth'
+    ]
+  },
+
   /*
   ** Nuxt.js modules
   */

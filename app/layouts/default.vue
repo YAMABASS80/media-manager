@@ -49,23 +49,25 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        clipped: false,
-        drawer: false,
-        fixed: false,
-        items: [
-          { icon: 'home', title: 'ホーム', to: '/' },
-          { icon: 'video_library', title: 'メディア管理', to: '/media_management' },
-          { icon: 'logout', title: 'ログアウト', to: '/logout' },
+import { Auth } from 'aws-amplify'
 
-        ],
-        // miniVariant: true,
-        right: true,
-        rightDrawer: false,
-        title: 'Media Manager'
-      }
+export default {
+  data() {
+    return {
+      clipped: false,
+      drawer: false,
+      fixed: false,
+      items: [
+        { icon: 'home', title: 'ホーム', to: '/' },
+        { icon: 'video_library', title: 'メディア管理', to: '/media_management' },
+        { icon: 'logout', title: 'ログアウト', to: '/logout' },
+
+      ],
+      // miniVariant: true,
+      right: true,
+      rightDrawer: false,
+      title: 'Media Manager'
     }
   }
+}
 </script>
