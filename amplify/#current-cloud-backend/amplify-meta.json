@@ -1,0 +1,35 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "media-manager-dev-20190602222736-authRole",
+			"UnauthRoleArn": "arn:aws:iam::607105552264:role/media-manager-dev-20190602222736-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::607105552264:role/media-manager-dev-20190602222736-authRole",
+			"Region": "ap-northeast-1",
+			"DeploymentBucketName": "media-manager-dev-20190602222736-deployment",
+			"UnauthRoleName": "media-manager-dev-20190602222736-unauthRole",
+			"StackName": "media-manager-dev-20190602222736",
+			"StackId": "arn:aws:cloudformation:ap-northeast-1:607105552264:stack/media-manager-dev-20190602222736/2fd33900-853a-11e9-a6e3-0ee87e6fb924"
+		}
+	},
+	"auth": {
+		"mediamanageraaa714ef": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/media-manager-dev-20190602222736-deployment/amplify-cfn-templates/auth/mediamanageraaa714ef-cloudformation-template.yml",
+				"logicalId": "authmediamanageraaa714ef"
+			},
+			"lastPushTimeStamp": "2019-06-02T13:33:50.351Z",
+			"output": {
+				"AppClientSecret": "1g82g5uepjd62rlju7nvh0gt51dpoe8e8pjjhrnqfvbtsaq70mf1",
+				"UserPoolId": "ap-northeast-1_ZqEhk5bGr",
+				"AppClientIDWeb": "6p2sqfb4fco8hffagrd22u5mbn",
+				"AppClientID": "37fgmnh6dnemi6je81oqp673a1",
+				"IdentityPoolId": "ap-northeast-1:2ba262dd-f38a-4806-a1cb-f0e860d82b86",
+				"IdentityPoolName": "mediamanageraaa714ef_identitypool_aaa714ef__dev",
+				"UserPoolName": "mediamanageraaa714ef_userpool_aaa714ef"
+			},
+			"lastPushDirHash": "VUeDBOiIUfxbyPY7zpLm73apdw4="
+		}
+	}
+}
