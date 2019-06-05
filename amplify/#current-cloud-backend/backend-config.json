@@ -1,0 +1,8 @@
+{
+	"auth": {
+		"mediamanageraaa714ef": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
