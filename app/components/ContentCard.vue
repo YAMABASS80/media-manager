@@ -16,7 +16,7 @@
           <v-btn flat>
             <v-icon>play_arrow</v-icon>
           </v-btn>
-          <v-btn flat>
+          <v-btn flat :to="edit_url">
             <v-icon>edit</v-icon>
           </v-btn>
         </v-card-actions>
@@ -36,6 +36,9 @@ export default {
       type: String
     },
     card_image: {
+      type: String
+    },
+    edit_url: {
       type: String
     }
   }
